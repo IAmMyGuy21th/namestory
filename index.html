@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6,16 +6,13 @@
 <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
 <style>
 
-
 html {
   /*display: flex;*/
   background-color: #fff;
 }
 
-
 // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 100 to 800
-
 
 .suse-a {
   font-family: "SUSE", sans-serif;
@@ -23,7 +20,6 @@ html {
   font-weight: 500;
   font-style: normal;
 }
-
 
 /* The container must be positioned relative: */
 .custom-select {
@@ -34,16 +30,13 @@ html {
   font-style: normal;
 }
 
-
 .custom-select select {
   display: none; /*hide original SELECT element: */
 }
 
-
 .select-selected {
   background-color: DodgerBlue;
 }
-
 
 /* Style the arrow inside the select element: */
 .select-selected:after {
@@ -57,13 +50,11 @@ html {
   border-color: #fff transparent transparent transparent;
 }
 
-
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
   border-color: transparent transparent #fff transparent;
   top: 7px;
 }
-
 
 /* style the items (options), including the selected item: */
 .select-items div,.select-selected {
@@ -73,7 +64,6 @@ html {
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
 }
-
 
 /* Style items (options): */
 .select-items {
@@ -85,12 +75,10 @@ html {
   z-index: 99;
 }
 
-
 /* Hide the items when the select box is closed: */
 .select-hide {
   display: none;
 }
-
 
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
@@ -111,7 +99,6 @@ button {
   cursor: pointer;
 }
 
-
 button::after {
   content: "";
   position: absolute;
@@ -123,7 +110,6 @@ button::after {
   transition: 0.5s;
   transform-origin: center;
 }
-
 
 button::before {
   content: "";
@@ -137,17 +123,14 @@ button::before {
   transition: 0.5s;
 }
 
-
 button:hover::before, button:hover::after {
   transform: scale(0)
 }
-
 
 button:hover {
   box-shadow: inset 0px 0px 25px #1479EA;
 }
 */
-
 
 button {
     background-color: DodgerBlue;
@@ -162,23 +145,19 @@ button {
     font-style: normal;
 }
 
-
 button:hover {
-        background-color: #1a70dd;
+	background-color: #1a70dd;
     cursor: pointer;
 }
-
 
 button:active {
-        background-color: #0a60cc;
+	background-color: #0a60cc;
     cursor: pointer;
 }
 
-
 .line-break {
-        font-size: 5px;
+	font-size: 5px;
 }
-
 
 .container {
     width: 100%;
@@ -193,7 +172,8 @@ button:active {
 <center>
 <div class='custom-select' style='width:80%;'>
 <select name='names' id='names' class='suse-a'>
-        <option value="aisham">Hisham's Name Story</option>
+	<option value="blank">Hisham's Name Story</option>
+	<option value="aisham" selected="selected">Hisham's Name Story</option>
     <option value="tej">Tej's Name Story</option>
     <option value="jayden">Jayden's Name Story</option>
     <option value="sylas">Sylas's Polytrack</option>
@@ -201,36 +181,28 @@ button:active {
 </div>
 <center>
 
-
 <div class='line-break'>
 <br>
 </div>
-
 
 <button class='suse-a' onclick='story(event)'>Next →</button>
 
-
 <div class='line-break'>
 <br>
 </div>
 
-
 <div id='container' class='container'>
-
 
 </div>
 
-
 <script>
-
 
 const cont = document.getElementById('container')
 const e = document.getElementById('names')
 let clicked = false
 
-
 function story(thing) {
-        if (!clicked) {
+	if (!clicked) {
       const person = e.options[e.selectedIndex].value
       let iframe = document.createElement('iframe')
       iframe.src = 'https://iammyguy21th.github.io/namestory/' + person + '.html'
@@ -245,20 +217,7 @@ function story(thing) {
     }
 }
 
-
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -327,7 +286,6 @@ for (i = 0; i < l; i++) {
   });
 }
 
-
 function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
   except the current select box: */
@@ -350,12 +308,11 @@ function closeAllSelect(elmnt) {
   }
 }
 
-
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
 </script>
 
-
 </body>
 </html>
+
