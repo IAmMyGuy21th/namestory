@@ -172,8 +172,8 @@ button:active {
 <center>
 <div class='custom-select' style='width:80%;'>
 <select name='names' id='names' class='suse-a'>
-	<option value="blank">Hisham's Name Story</option>
-	<option value="aisham" selected="selected">Hisham's Name Story</option>
+	<option value="blank">Choose Name...</option>
+	<option value="aisham">Hisham's Name Story</option>
     <option value="tej">Tej's Name Story</option>
     <option value="jayden">Jayden's Name Story</option>
     <option value="sylas">Sylas's Polytrack</option>
@@ -204,16 +204,18 @@ let clicked = false
 function story(thing) {
 	if (!clicked) {
       const person = e.options[e.selectedIndex].value
-      let iframe = document.createElement('iframe')
-      iframe.src = 'https://iammyguy21th.github.io/namestory/' + person + '.html'
-      iframe.width = '100%'
-      iframe.height = 800
-      iframe.style.borderRadius = '20px'
-      iframe.style.borderWidth = '5px'
-      iframe.style.borderStyle = 'solid'
-      iframe.style.borderColor = '#eee'
-      cont.appendChild(iframe)
-      clicked = true
+      if (!(person == 'blank')) {
+        let iframe = document.createElement('iframe')
+        iframe.src = 'https://iammyguy21th.github.io/namestory/' + person + '.html'
+        iframe.width = '100%'
+        iframe.height = 800
+        iframe.style.borderRadius = '20px'
+        iframe.style.borderWidth = '5px'
+        iframe.style.borderStyle = 'solid'
+        iframe.style.borderColor = '#eee'
+        cont.appendChild(iframe)
+        clicked = true
+      }
     }
 }
 
