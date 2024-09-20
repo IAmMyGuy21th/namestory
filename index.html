@@ -209,6 +209,7 @@ function story(thing) {
         iframe.src = 'https://iammyguy21th.github.io/namestory/' + person + '.html'
         iframe.width = '100%'
         iframe.height = 800
+	iframe.id = 'i'
         iframe.style.borderRadius = '20px'
         iframe.style.borderWidth = '5px'
         iframe.style.borderStyle = 'solid'
@@ -216,7 +217,24 @@ function story(thing) {
         cont.appendChild(iframe)
         clicked = true
       }
-    }
+    } else {
+	let i = document.getElementById('i')
+	i.remove()
+	const person = e.options[e.selectedIndex].value
+      if (!(person == 'blank')) {
+        let iframe = document.createElement('iframe')
+        iframe.src = 'https://iammyguy21th.github.io/namestory/' + person + '.html'
+        iframe.width = '100%'
+        iframe.height = 800
+	iframe.id = 'i'
+        iframe.style.borderRadius = '20px'
+        iframe.style.borderWidth = '5px'
+        iframe.style.borderStyle = 'solid'
+        iframe.style.borderColor = '#eee'
+        cont.appendChild(iframe)
+        clicked = true
+      }
+	}
 }
 
 </script>
